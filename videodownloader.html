@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Video Downloader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.box {
+    background: rgba(0,0,0,0.6);
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #00eaff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00bcd4;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Universal Video Downloader</h2>
+    <p>Tanpa watermark</p>
+
+    <input type="text" id="link" placeholder="Tempel link video...">
+
+    <button onclick="download()">DOWNLOAD</button>
+</div>
+
+<script>
+function download() {
+    const link = document.getElementById("link").value;
+    if (!link) {
+        alert("Masukkan link video!");
+        return;
+    }
+
+    // Redirect ke downloader tanpa watermark
+    // GANTI salah satu jika mau
+    window.location.href = 
+        "https://ssstik.io/en?url=" + encodeURIComponent(link);
+}
+</script>
+
+</body>
+</html>
