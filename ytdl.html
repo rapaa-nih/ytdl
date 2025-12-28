@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>YouTube MP3 Downloader</title>
+
+<style>
+body{
+  background:#0f2027;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+}
+.box{
+  background:#111;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 0 20px cyan;
+  width:320px;
+  text-align:center;
+}
+input,button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  margin-top:12px;
+}
+button{
+  background:cyan;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🎵 YouTube MP3</h2>
+  <input id="link" placeholder="Paste link YouTube">
+  <button onclick="go()">DOWNLOAD</button>
+</div>
+
+<script>
+function go(){
+  let url = document.getElementById("link").value;
+  if(!url) return alert("Masukkan link!");
+
+  // AUTO DOWNLOAD TRIGGER
+  location.href =
+   "https://www.yt-download.org/api/button/mp3?url="
+   + encodeURIComponent(url);
+}
+</script>
+
+</body>
+</html>
